@@ -27,11 +27,11 @@ ref3_tensor = torch.tensor( [9226, 16, 21111])
 
 ref_tensors = pad2max([ref1_tensor, ref2_tensor, ref3_tensor], pad_id=1)
 ref_tensors: tensor([[38457,    14,    62,  5128,     7,   201],
-    [38457,    14,  5128,   159,     1,     1],
-    [ 9226,    16, 21111,     1,     1,     1]])
+          [38457,    14,  5128,   159,     1,     1],
+          [ 9226,    16, 21111,     1,     1,     1]])
 # batch_size = 1  if you already has the batch dimension, remove unsqueeze(0)
 print(get_score(sys_tensor.unsqueeze(0), ref_tensors.unsqueeze(0), pad_id=1, n_gram=1))
-1-gram sim: tensor([[0.9091, 0.4444, 0.0000]]) , sys is the most similar with ref1, based on 1-gram overlap
+1-gram sim: tensor([[0.9091, 0.4444, 0.0000]]), which means sys is most similar to ref1 based on 1-gram overlap
 print(get_score(sys_tensor.unsqueeze(0), ref_tensors.unsqueeze(0), pad_id=1, n_gram=2))
 2-gram sim: tensor([[0.6667, 0.2857, 0.0000]])
 print(get_score(sys_tensor.unsqueeze(0), ref_tensors.unsqueeze(0), pad_id=1, n_gram=3))
