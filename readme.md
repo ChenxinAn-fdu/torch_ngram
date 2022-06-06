@@ -8,12 +8,11 @@ pip install torch-ngram
 ```
 
 ### Usage of torch_ngram
-- We require the system output and reference represented as `Long Tensor`
 - Input parameters of `get_score( system_tensor, reference_tensor, pad_id, n_gram)`: 
-  * **system_tensor** (batch_size, sys_seq_len) , 
-  * **reference_tensor**: (batch_size, reference_num ,ref_seq_len)  # supporting multiple references, 
-  * **pad_id** (int, the pad value in batching), 
-  * **n_gram** (int, usually set to 1,2,3,4). 
+  * **system_tensor**: LongTensor (batch_size, sys_seq_len) , 
+  * **reference_tensor**: LongTensor (batch_size, reference_num ,ref_seq_len)  # supporting multiple references, 
+  * **pad_id** int # the pad value in batching, 
+  * **n_gram** int # usually set to 1,2,3,4). 
 
 ```python
 # An example of using torch_ngram, '->' means roberta-tokenizer
