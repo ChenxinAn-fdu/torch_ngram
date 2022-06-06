@@ -25,10 +25,10 @@ ref3 = "this is frightening"  -> [9226, 16, 21111]
 import torch
 from torch_ngram.torch_ngram import pad2max
 from torch_ngram.torch_ngram import get_score
-sys_tensor = torch.tensor( [38457, 14, 62, 7, 201])
-ref1_tensor = torch.tensor( [38457, 14, 62, 5128, 7, 201])
-ref2_tensor = torch.tensor( [38457, 14, 5128, 159])
-ref3_tensor = torch.tensor( [9226, 16, 21111])
+sys_tensor = torch.tensor([38457, 14, 62, 7, 201])
+ref1_tensor = torch.tensor([38457, 14, 62, 5128, 7, 201])
+ref2_tensor = torch.tensor([38457, 14, 5128, 159])
+ref3_tensor = torch.tensor([9226, 16, 21111])
 
 ref_tensors = pad2max([ref1_tensor, ref2_tensor, ref3_tensor], pad_id=1)
 ==> ref_tensors: tensor([[38457,    14,    62,  5128,     7,   201],
