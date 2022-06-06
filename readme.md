@@ -1,6 +1,11 @@
 #  Calculate n-gram similarity with Pytorch 
 This is a [torch](https://pytorch.org/ "torch") (version >= 1.4) tool that can simulate some text relevance metrics such as ROUGE, BLEU on GPU.  The similariity score is calculated with the product of system output and reference. Given a system output $x$
- and a reference $y$, the returned result is $ 2*|x \cap y| / (|x| + |y|)$
+ and a reference $y$, the returned result is:   $ 2*|x \cap y| / (|x| + |y|)$
+
+#### Install
+``` 
+pip install torch-ngram
+```
 
 #### Usage of torch_ngram
 - We require the system output and reference represented as `Long Tensor`
@@ -18,8 +23,8 @@ ref2 = "leave that quiet down"  => [38457, 14, 5128, 159]
 ref3 = "this is frightening"  => [9226, 16, 21111]
 
 import torch
-from torch_ngram import pad2max
-from torch_ngram import get_score
+from torch_ngram.torch_ngram import pad2max
+from torch_ngram.torch_ngram import get_score
 sys_tensor = torch.tensor( [38457, 14, 62, 7, 201])
 ref1_tensor = torch.tensor( [38457, 14, 62, 5128, 7, 201])
 ref2_tensor = torch.tensor( [38457, 14, 5128, 159])
