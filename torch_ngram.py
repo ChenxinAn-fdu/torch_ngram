@@ -48,7 +48,6 @@ def get_score(ref_tensor, sys_tensor, pad_id, n_gram):
     """
     sys_padding = (~(sys_tensor == pad_id)).float()
     ref_padding = (~(ref_tensor == pad_id)).float()
-    # 将 ref 和 sys的pad_id 换成不一样的 防止pad_id 的影响
     n = min(min(n_gram, ref_tensor.size(-1)), sys_tensor.size(-1))
     ref_lengths = torch.sum(ref_padding, dim=-1) - n + 1
     ref_ones = torch.ones_like(ref_lengths, device=ref_lengths.device)
